@@ -1,0 +1,10 @@
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\bin\Release\Generator pociągów.exe.config
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\bin\Release\Generator pociągów.exe
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\bin\Release\Generator pociągów.pdb
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator pociągów.csprojAssemblyReference.cache
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator_pociągów.Properties.Resources.resources
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator pociągów.csproj.GenerateResource.cache
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator pociągów.csproj.CoreCompileInputs.cache
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator pociągów.exe
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator pociągów.pdb
+G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator_pociągów.mainForm.resources

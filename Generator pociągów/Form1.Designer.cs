@@ -1,7 +1,7 @@
 ﻿
 namespace Generator_pociągów
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -29,7 +29,7 @@ namespace Generator_pociągów
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@ namespace Generator_pociągów
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button9 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,7 +106,7 @@ namespace Generator_pociągów
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 423);
+            this.tabPage1.Size = new System.Drawing.Size(768, 420);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Generator Tablic Relacyjnych";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -293,6 +294,7 @@ namespace Generator_pociągów
             // 
             // button8
             // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.Location = new System.Drawing.Point(696, 290);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(69, 23);
@@ -315,6 +317,7 @@ namespace Generator_pociągów
             // 
             // button7
             // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button7.Location = new System.Drawing.Point(211, 290);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(69, 23);
@@ -325,6 +328,7 @@ namespace Generator_pociągów
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox3.Location = new System.Drawing.Point(7, 321);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(10000, 76);
@@ -334,6 +338,7 @@ namespace Generator_pociągów
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.Location = new System.Drawing.Point(7, 291);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(198, 23);
@@ -344,6 +349,7 @@ namespace Generator_pociągów
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(7, 215);
             this.pictureBox2.Name = "pictureBox2";
@@ -353,6 +359,8 @@ namespace Generator_pociągów
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(7, 35);
             this.listBox1.Name = "listBox1";
@@ -393,18 +401,30 @@ namespace Generator_pociągów
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(157, 17);
-            this.toolStripStatusLabel1.Text = "Train generator v1.0 by Hirek";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(166, 17);
+            this.toolStripStatusLabel1.Text = "Train generator v1.0.1 by Hirek";
             // 
-            // Form1
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Location = new System.Drawing.Point(689, 11);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(95, 23);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "Zgłoś błąd";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 470);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "mainForm";
             this.Text = "Train Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
@@ -454,6 +474,7 @@ namespace Generator_pociągów
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button button9;
     }
 }
 
