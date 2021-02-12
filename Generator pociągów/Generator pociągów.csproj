@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF45E7F5-5E21-4B3A-BA87-D48793DC15B6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Generator_pociągów</RootNamespace>
+    <AssemblyName>Generator pociągów</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9emnouz-145Ac-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9emnouz-156A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9emnouz-Z2ABCMg-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-139A-IC3-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-139A-IC4-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-166A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-Z1A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-Z2AMg-FPS-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nou-112A-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nou-112Alux-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nou-140A-FPS-1-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-10-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-2015-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-FPS-2-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-FPS-3-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AB8nopuz-163A-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AB9nou-112At-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AB9nouz-141A-20-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amnopuz-152A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amnopuz-152Aa-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amnopuz-158A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asmnouz-507A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asmnouz-508A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B4Rmnouz-155A-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B4Rmnouz-155A-Pesa-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B4Rmnouz-155A-ZNTKMM-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B5mnopuvz-152Az-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B6bnopuvz-161A-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7bnopuz-111Ainw-Pesa-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7bnopuz-168A-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7nopuvz-111Arow-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7nopuvz-168A-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9mnopuvz-154Aarow-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9mnopuvz-154Arow-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9nopuz-111A-20-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9nopuz-162A-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9ouv,B9nouv,B9nouvz-111A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-167A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-XBN-FPS-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-XBNMg2-FPS-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-Z1B-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nou-111A-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nou-141A-MM-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nou-YB-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-111A-2-SPOT-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-141A-10-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-141A-FPS-2013-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-141A-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-174A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-136A-IC5-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-136A-IC6-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-144A-FPS-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-144A-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-170A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-171A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-XBMg-FPS-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-Z1B-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-Z2B-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11pv-120A-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bbmnouz-157A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bbnopu-111Ainw-FPS-SPOT-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc9nouz-173A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc10mnouz-134Ab-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc10mnouz-134Ac-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc10mnouz-172A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BDosuv-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuvz-159A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopux-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuz-154A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuz-154Aa-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuz-159A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bnopuv-111A-Newag-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bnopuv-111Arow-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bnopuvz-111Arow-2-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BR3nopuz-113Aa-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED72A-005-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED72Ac-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED72-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED74-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED78-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-a-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-b-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-c-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-d-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-e-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-f-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-g-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-h-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-a-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-b-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-c-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-d-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-e-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-f-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-g-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-h-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-1-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-2-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-3-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-4-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-5-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-6-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-7-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57-19xx-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57-20xx-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57ALc-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57ALd-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57AL-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57FPS-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN71-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN96A-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07-1008-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07-IC-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07-IC-HCP-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07P-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP08-IC-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP09-042-powstanie-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP09-044-kolejowe-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP09-IC-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU07A-IC-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU07-IC-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU07-IC-HCP-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU44-005-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU44-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU160-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SA139-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SM42-30xx-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SM42-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SM42-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SU42-10xx-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SU42-polregio-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SU160-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLAB9bnouz-308A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABd-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABmnouz-305Ad-ic-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABouz-1-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABouz-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-406A-10-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-406A-20-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-406A-30-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-407A-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-AWR-PESA-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-Newag-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRnouz-113Aa-2015-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRouz-113A-Lux-a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9emnouz-145Ac-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9emnouz-156A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9emnouz-Z2ABCMg-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-139A-IC3-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-139A-IC4-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-166A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-Z1A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9mnouz-Z2AMg-FPS-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nou-112A-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nou-112Alux-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nou-140A-FPS-1-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-10-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-2015-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-FPS-2-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A9nouz-140A-FPS-3-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AB8nopuz-163A-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AB9nou-112At-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AB9nouz-141A-20-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amnopuz-152A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amnopuz-152Aa-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amnopuz-158A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asmnouz-507A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asmnouz-508A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B4Rmnouz-155A-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B4Rmnouz-155A-Pesa-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B4Rmnouz-155A-ZNTKMM-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B5mnopuvz-152Az-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B6bnopuvz-161A-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7bnopuz-111Ainw-Pesa-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7bnopuz-168A-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7nopuvz-111Arow-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B7nopuvz-168A-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9mnopuvz-154Aarow-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9mnopuvz-154Arow-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9nopuz-111A-20-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9nopuz-162A-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B9ouv,B9nouv,B9nouvz-111A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-167A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-XBN-FPS-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-XBNMg2-FPS-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10bmnouz-Z1B-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nou-111A-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nou-141A-MM-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nou-YB-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-111A-2-SPOT-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-141A-10-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-141A-FPS-2013-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-141A-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B10nouz-174A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-136A-IC5-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-136A-IC6-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-144A-FPS-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-144A-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-170A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-171A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-XBMg-FPS-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-Z1B-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11mnouz-Z2B-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B11pv-120A-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bbmnouz-157A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bbnopu-111Ainw-FPS-SPOT-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc9nouz-173A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc10mnouz-134Ab-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc10mnouz-134Ac-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bc10mnouz-172A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BDosuv-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuvz-159A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopux-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuz-154A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuz-154Aa-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bmnopuz-159A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bnopuv-111A-Newag-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bnopuv-111Arow-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bnopuvz-111Arow-2-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BR3nopuz-113Aa-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED72A-005-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED72Ac-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED72-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED74-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED78-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-a-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-b-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-c-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-d-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-e-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-f-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-g-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED160-h-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-a-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-b-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-c-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-d-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-e-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-f-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-g-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED161-h-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-1-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-2-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-3-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-4-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-5-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-6-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ED250-7-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57-19xx-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57-20xx-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57ALc-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57ALd-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57AL-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57FPS-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN57-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN71-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EN96A-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07-1008-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07-IC-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07-IC-HCP-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP07P-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP08-IC-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP09-042-powstanie-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP09-044-kolejowe-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EP09-IC-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU07A-IC-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU07-IC-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU07-IC-HCP-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU44-005-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU44-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EU160-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SA139-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SM42-30xx-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SM42-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SM42-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SU42-10xx-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SU42-polregio-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SU160-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLAB9bnouz-308A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABd-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABmnouz-305Ad-ic-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABouz-1-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WLABouz-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-406A-10-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-406A-20-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-406A-30-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-407A-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-AWR-PESA-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRmnouz-Newag-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRnouz-113Aa-2015-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRouz-113A-Lux-a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
