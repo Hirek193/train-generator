@@ -8,3 +8,13 @@ G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Releas
 G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator pociągów.exe
 G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator pociągów.pdb
 G:\Users\Hirek\source\repos\Generator pociągów\Generator pociągów\obj\Release\Generator_pociągów.mainForm.resources
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\bin\Release\Generator pociągów.exe.config
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\bin\Release\Generator pociągów.exe
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\bin\Release\Generator pociągów.pdb
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\obj\Release\Generator pociągów.csprojAssemblyReference.cache
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\obj\Release\Generator_pociągów.mainForm.resources
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\obj\Release\Generator_pociągów.Properties.Resources.resources
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\obj\Release\Generator pociągów.csproj.GenerateResource.cache
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\obj\Release\Generator pociągów.csproj.CoreCompileInputs.cache
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\obj\Release\Generator pociągów.exe
+D:\projekty\priv\vs\generator pociagow\train-generator\Generator pociągów\obj\Release\Generator pociągów.pdb
