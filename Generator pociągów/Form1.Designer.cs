@@ -58,6 +58,8 @@ namespace Generator_pociągów
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -68,6 +70,7 @@ namespace Generator_pociągów
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +81,7 @@ namespace Generator_pociągów
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -216,6 +220,8 @@ namespace Generator_pociągów
             // addPosrTxt
             // 
             this.addPosrTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addPosrTxt.BackColor = System.Drawing.SystemColors.Window;
+            this.addPosrTxt.ForeColor = System.Drawing.SystemColors.WindowText;
             this.addPosrTxt.Location = new System.Drawing.Point(10, 205);
             this.addPosrTxt.Name = "addPosrTxt";
             this.addPosrTxt.Size = new System.Drawing.Size(176, 20);
@@ -307,12 +313,12 @@ namespace Generator_pociągów
             // 
             this.hScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.hScrollBar1.LargeChange = 1;
             this.hScrollBar1.Location = new System.Drawing.Point(7, 397);
-            this.hScrollBar1.Minimum = 7;
+            this.hScrollBar1.Maximum = 0;
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(758, 17);
             this.hScrollBar1.TabIndex = 6;
-            this.hScrollBar1.Value = 7;
             this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
             // 
             // button7
@@ -370,6 +376,7 @@ namespace Generator_pociągów
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Wagony A",
@@ -377,10 +384,32 @@ namespace Generator_pociągów
             "Wagony W",
             "Lokomotywy/EZT"});
             this.comboBox1.Location = new System.Drawing.Point(7, 7);
+            this.comboBox1.MaxLength = 10;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(273, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(768, 420);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Generator SRJ";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(284, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(187, 34);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Może kiedyś";
             // 
             // saveFileDialog1
             // 
@@ -402,7 +431,7 @@ namespace Generator_pociągów
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(166, 17);
-            this.toolStripStatusLabel1.Text = "Train generator v1.0.1 by Hirek";
+            this.toolStripStatusLabel1.Text = "Train generator v1.0.2 by Hirek";
             // 
             // button9
             // 
@@ -434,6 +463,8 @@ namespace Generator_pociągów
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -475,6 +506,8 @@ namespace Generator_pociągów
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label6;
     }
 }
 

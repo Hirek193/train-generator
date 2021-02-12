@@ -60,16 +60,25 @@ namespace Generator_pociągów
                     loco.Add(nameB);
                 }
             }
-            
+
+            comboBox1.SelectedIndex = 0;
+            listBox1.DataSource = aWag;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            posrList.Items.Add(addPosrTxt.Text);
-            Globals.posrednie.Add(addPosrTxt.Text);
-            addPosrTxt.Text = "";
-            addPosrTxt.Focus();
+            if(addPosrTxt.Text != "")
+            {
+                posrList.Items.Add(addPosrTxt.Text);
+                Globals.posrednie.Add(addPosrTxt.Text);
+                addPosrTxt.Text = "";
+                addPosrTxt.Focus();
+            }
+            else
+            {
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,10 +117,17 @@ namespace Generator_pociągów
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult dr = saveFileDialog1.ShowDialog();
-            if (dr == DialogResult.OK)
+            if(pictureBox1.BackgroundImage != null)
             {
-                pictureBox1.BackgroundImage.Save(saveFileDialog1.FileName);
+                DialogResult dr = saveFileDialog1.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    pictureBox1.BackgroundImage.Save(saveFileDialog1.FileName);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Proszę wygenerowac najpierw podgląd", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -119,95 +135,131 @@ namespace Generator_pociągów
         // Generator
         private void button4_Click(object sender, EventArgs e)
         {
-            try
+            if (startTxt.Text != "" && entTxt.Text != ""
+                && nameTxt.Text != "" && numberTxt.Text != "")
             {
-                Bitmap bm = new Bitmap(1080, 795);
-                Graphics graphics = Graphics.FromImage(bm);
-                Pen pen = new Pen(Color.Black, 2f);
-                SolidBrush bg = new SolidBrush(Color.White);
-                Rectangle rect = new Rectangle(0 + 50, 60, 980, 100);
-
-
-                // Background
-                PointF[] pf = new PointF[]
+                try
                 {
+                    Bitmap bm = new Bitmap(1080, 795);
+                    Graphics graphics = Graphics.FromImage(bm);
+                    Pen pen = new Pen(Color.Black, 5f);
+                    SolidBrush bg = new SolidBrush(Color.White);
+                    Rectangle rect = new Rectangle(0 + 50, 60, 980, 100);
+
+
+                    // Background
+                    PointF[] pf = new PointF[]
+                    {
                 new PointF(0, 0),
                 new PointF(0, 795),
                 new PointF(1080, 795),
                 new PointF(1080, 0)
-                };
-                graphics.FillPolygon(bg, pf);
+                    };
+                    graphics.FillPolygon(bg, pf);
 
-                // Separator
-                graphics.DrawLine(pen, new PointF(0 + 50, 150), new PointF(1080 - 50, 150));
+                    // Separator
+                    graphics.DrawLine(pen, new PointF(0 + 50, 150), new PointF(1080 - 50, 150));
 
-                // Number
-                graphics.DrawString(Globals.number, new Font("Arial", 50), Brushes.Red, rect);
+                    // Number
+                    graphics.DrawString(Globals.number, new Font("Arial", 50), Brushes.Red, rect);
 
-                // Name
-                StringFormat formatB = new StringFormat(StringFormatFlags.DirectionRightToLeft);
+                    // Name
+                    StringFormat formatB = new StringFormat(StringFormatFlags.DirectionRightToLeft);
 
-                graphics.DrawString(Globals.name.ToUpper(), new Font("Arial", 50, FontStyle.Italic), Brushes.Red, rect, formatB);
+                    graphics.DrawString(Globals.name.ToUpper(), new Font("Arial", 50, FontStyle.Italic), Brushes.Red, rect, formatB);
 
-                // Start station
+                    // Start station
 
-                Rectangle rectStart = new Rectangle(0 + 50, 200, 1080 - 50, 150);
-                graphics.DrawString(Globals.start, new Font("Arial", 50), Brushes.Black, rectStart);
-
-
-                // Final station
-                Rectangle rectEnd = new Rectangle(0 + 50, 695, 980, 150);
-                graphics.DrawString(Globals.finish, new Font("Arial", 50), Brushes.Black, rectEnd, formatB);
+                    Rectangle rectStart = new Rectangle(0 + 50, 200, 1080 - 50, 150);
+                    graphics.DrawString(Globals.start, new Font("Arial", 50), Brushes.Black, rectStart);
 
 
-                // Stacje posrendnie
+                    // Final station
+                    Rectangle rectEnd = new Rectangle(0 + 50, 695, 980, 150);
+                    graphics.DrawString(Globals.finish, new Font("Arial", 50), Brushes.Black, rectEnd, formatB);
 
-                StringFormat format = new StringFormat();
-                format.LineAlignment = StringAlignment.Center;
-                format.Alignment = StringAlignment.Center;
 
-                Rectangle posr = new Rectangle(50, 285, 980, 400);
-                string posrednie = "";
-                for (int i = 0; i < Globals.posrednie.Count; i++)
-                {
-                    posrednie += Globals.posrednie[i] + " - ";
+                    // Stacje posrendnie
+
+                    StringFormat format = new StringFormat();
+                    format.LineAlignment = StringAlignment.Center;
+                    format.Alignment = StringAlignment.Center;
+
+                    Rectangle posr = new Rectangle(50, 285, 980, 400);
+                    string posrednie = "";
+                    for (int i = 0; i < Globals.posrednie.Count; i++)
+                    {
+                        posrednie += Globals.posrednie[i] + " - ";
+                    }
+
+                    if (posrednie.Length > 2)
+                    {
+                        posrednie = posrednie.Substring(0, posrednie.Length - 2);
+                    }
+
+                    if (posrednie.Length > 180)
+                    {
+                        graphics.DrawString(posrednie, new Font("Arial", 30), Brushes.Black, posr, format);
+                    }
+                    else if (posrednie.Length < 100)
+                    {
+                        graphics.DrawString(posrednie, new Font("Arial", 40), Brushes.Black, posr, format);
+
+                    }
+                    else
+                    {
+                        graphics.DrawString(posrednie, new Font("Arial", 35), Brushes.Black, posr, format);
+                    }
+
+
+                    // Show graphics
+                    pictureBox1.BackgroundImage = null;
+                    pictureBox1.BackgroundImage = bm;
                 }
-
-                if (posrednie.Length > 2)
+                catch (Exception ex)
                 {
-                    posrednie = posrednie.Substring(0, posrednie.Length - 2);
-                }
+                    DialogResult dr = MessageBox.Show("Podczas generowania tabliczki wystąpił błąd. Sprawdź czy pola" +
+                        " początku relacji, końca relacji, nazwy pociągu i numeru są wypełnione. W przeciwnym wypadku" +
+                        " prześlij poniższą treść w zgłoszeniu.\n\n" + ex.ToString() +
+                        "\n\nCzy chcesz zgłosić błąd na githubie?", "Błąd", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
-                if (posrednie.Length > 180)
-                {
-                    graphics.DrawString(posrednie, new Font("Arial", 30), Brushes.Black, posr, format);
+                    if (dr == DialogResult.Yes)
+                    {
+                        Process.Start("https://github.com/panmrherobrine/train-generator/issues");
+                    }
                 }
-                else if (posrednie.Length < 100)
-                {
-                    graphics.DrawString(posrednie, new Font("Arial", 40), Brushes.Black, posr, format);
-
-                }
-                else
-                {
-                    graphics.DrawString(posrednie, new Font("Arial", 35), Brushes.Black, posr, format);
-                }
-
-
-                // Show graphics
-                pictureBox1.BackgroundImage = null;
-                pictureBox1.BackgroundImage = bm;
             }
-            catch (Exception ex)
+            if (startTxt.Text == "")
             {
-                DialogResult dr = MessageBox.Show("Podczas generowania tabliczki wystąpił błąd. Sprawdź czy pola" +
-                    " początku relacji, końca relacji, nazwy pociągu i numeru są wypełnione. W przeciwnym wypadku" +
-                    " prześlij poniższą treść w zgłoszeniu.\n\n" + ex.ToString() +
-                    "\n\nCzy chcesz zgłosić błąd na githubie?", "Błąd", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-
-                if (dr == DialogResult.Yes)
-                {
-                    Process.Start("https://github.com/panmrherobrine/train-generator/issues");
-                }
+                startTxt.BackColor = Color.Red;
+            }
+            else
+            {
+                startTxt.BackColor = Color.White;
+            }
+            if (entTxt.Text == "")
+            {
+                entTxt.BackColor = Color.Red;
+            }
+            else
+            {
+                entTxt.BackColor = Color.White;
+            }
+            if (nameTxt.Text == "")
+            {
+                nameTxt.BackColor = Color.Red;
+            }
+            else
+            {
+                nameTxt.BackColor = Color.White;
+            }
+            if (numberTxt.Text == "")
+            {
+                numberTxt.BackColor = Color.Red;
+            }
+            else
+            {
+                numberTxt.BackColor = Color.White;
             }
         }
 
@@ -294,15 +346,22 @@ namespace Generator_pociągów
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Bitmap map = new Bitmap(szerZest, 58);
-            Rectangle rect = new Rectangle(0, 0, szerZest, 58);
-            Graphics gr = Graphics.FromImage(map);
-            gr.DrawImage(pictureBox3.Image, rect, rect, GraphicsUnit.Pixel);
-
-            DialogResult dr = saveFileDialog1.ShowDialog();
-            if (dr == DialogResult.OK)
+            if(pictureBox3.Image != null)
             {
-                map.Save(saveFileDialog1.FileName);
+                Bitmap map = new Bitmap(szerZest, 58);
+                Rectangle rect = new Rectangle(0, 0, szerZest, 58);
+                Graphics gr = Graphics.FromImage(map);
+                gr.DrawImage(pictureBox3.Image, rect, rect, GraphicsUnit.Pixel);
+
+                DialogResult dr = saveFileDialog1.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    map.Save(saveFileDialog1.FileName);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie wprowadzono żadnego zestawienia", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
