@@ -335,7 +335,7 @@ namespace Generator_pociągów
             sklad = new Bitmap(pictureBox3.Width, 58);
             pictureBox3.Image = null;
             hScrollBar1.Maximum = szerZest + 7;
-            pictureBox3.Location = new Point(7, 321);
+            hScrollBar1.Value = 0;
         }
 
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -369,6 +369,41 @@ namespace Generator_pociągów
         private void button9_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/panmrherobrine/train-generator/issues");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.BackgroundImage != null)
+            {
+                Clipboard.SetImage(pictureBox1.BackgroundImage);
+            }
+            else
+            {
+                MessageBox.Show("Proszę wygenerowac najpierw podgląd", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (pictureBox3.Image != null)
+            {
+                Bitmap map = new Bitmap(szerZest, 58);
+                Rectangle rect = new Rectangle(0, 0, szerZest, 58);
+                Graphics gr = Graphics.FromImage(map);
+                gr.DrawImage(pictureBox3.Image, rect, rect, GraphicsUnit.Pixel);
+
+                Clipboard.SetImage(map);
+            }
+            else
+            {
+                MessageBox.Show("Nie wprowadzono żadnego zestawienia", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            posrList.Items.Clear();
+            Globals.posrednie = new List<string>();
         }
     }
 

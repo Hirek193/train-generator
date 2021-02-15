@@ -32,6 +32,7 @@ namespace Generator_pociągów
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@ namespace Generator_pociągów
             this.startTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.button7 = new System.Windows.Forms.Button();
@@ -64,6 +66,7 @@ namespace Generator_pociągów
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button9 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,6 +93,8 @@ namespace Generator_pociągów
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button12);
+            this.tabPage1.Controls.Add(this.button10);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
@@ -114,6 +119,17 @@ namespace Generator_pociągów
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Generator Tablic Relacyjnych";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.Location = new System.Drawing.Point(573, 374);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(59, 23);
+            this.button10.TabIndex = 17;
+            this.button10.Text = "Skopiuj";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button5
             // 
@@ -282,6 +298,7 @@ namespace Generator_pociągów
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button11);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.hScrollBar1);
             this.tabPage2.Controls.Add(this.button7);
@@ -297,6 +314,17 @@ namespace Generator_pociągów
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Generator Zestawień";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Location = new System.Drawing.Point(621, 290);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(69, 23);
+            this.button11.TabIndex = 8;
+            this.button11.Text = "Skopiuj";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button8
             // 
@@ -403,12 +431,11 @@ namespace Generator_pociągów
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(284, 3);
+            this.label6.Location = new System.Drawing.Point(7, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 34);
+            this.label6.Size = new System.Drawing.Size(223, 26);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Może kiedyś";
+            this.label6.Text = "Kiedyś - na razie nie planuje się za to zabierać\r\nDX";
             // 
             // saveFileDialog1
             // 
@@ -442,6 +469,16 @@ namespace Generator_pociągów
             this.button9.Text = "Zgłoś błąd";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(192, 133);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(59, 23);
+            this.button12.TabIndex = 18;
+            this.button12.Text = "Wyczyść";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // mainForm
             // 
@@ -507,6 +544,9 @@ namespace Generator_pociągów
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 
