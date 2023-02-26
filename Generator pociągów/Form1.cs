@@ -14,6 +14,14 @@ namespace Generator_pociągów
 {
     public partial class mainForm : Form
     {
+        Color separatorLine = Color.Black;
+        Color startStation = Color.Black;
+        Color finishStation = Color.Black;
+        Color trainName = Color.Red;
+        Color VIAs = Color.Black;
+        Color trainNumber = Color.Red;
+        Color background = Color.White;
+
         string[] names;
         List<string> aWag = new List<string>();
         List<string> bWag = new List<string>();
@@ -142,8 +150,8 @@ namespace Generator_pociągów
                 {
                     Bitmap bm = new Bitmap(1080, 795);
                     Graphics graphics = Graphics.FromImage(bm);
-                    Pen pen = new Pen(Color.Black, 5f);
-                    SolidBrush bg = new SolidBrush(Color.White);
+                    Pen pen = new Pen(separatorLine, 5f);
+                    SolidBrush bg = new SolidBrush(background);
                     Rectangle rect = new Rectangle(0 + 50, 60, 980, 100);
 
 
@@ -158,25 +166,32 @@ namespace Generator_pociągów
                     graphics.FillPolygon(bg, pf);
 
                     // Separator
-                    graphics.DrawLine(pen, new PointF(0 + 50, 150), new PointF(1080 - 50, 150));
+                    graphics.DrawLine(pen, new PointF(0 + 50, 150),
+                        new PointF(1080 - 50, 150));
 
                     // Number
-                    graphics.DrawString(Globals.number, new Font("Arial", 50), Brushes.Red, rect);
+                    graphics.DrawString(Globals.number,
+                        new Font("Arial", 50), new SolidBrush(trainNumber), rect);
 
                     // Name
-                    StringFormat formatB = new StringFormat(StringFormatFlags.DirectionRightToLeft);
+                    StringFormat formatB = new StringFormat(
+                        StringFormatFlags.DirectionRightToLeft);
 
-                    graphics.DrawString(Globals.name.ToUpper(), new Font("Arial", 50, FontStyle.Italic), Brushes.Red, rect, formatB);
+                    graphics.DrawString(Globals.name.ToUpper(),
+                        new Font("Arial", 50, FontStyle.Italic),
+                        new SolidBrush(trainName), rect, formatB);
 
                     // Start station
 
                     Rectangle rectStart = new Rectangle(0 + 50, 200, 1080 - 50, 150);
-                    graphics.DrawString(Globals.start, new Font("Arial", 50), Brushes.Black, rectStart);
+                    graphics.DrawString(Globals.start, new Font("Arial", 50),
+                        new SolidBrush(startStation), rectStart);
 
 
                     // Final station
                     Rectangle rectEnd = new Rectangle(0 + 50, 695, 980, 150);
-                    graphics.DrawString(Globals.finish, new Font("Arial", 50), Brushes.Black, rectEnd, formatB);
+                    graphics.DrawString(Globals.finish, new Font("Arial", 50),
+                        new SolidBrush(finishStation), rectEnd, formatB);
 
 
                     // Stacje posrendnie
@@ -199,16 +214,16 @@ namespace Generator_pociągów
 
                     if (posrednie.Length > 180)
                     {
-                        graphics.DrawString(posrednie, new Font("Arial", 30), Brushes.Black, posr, format);
+                        graphics.DrawString(posrednie, new Font("Arial", 30), new SolidBrush(VIAs), posr, format);
                     }
                     else if (posrednie.Length < 100)
                     {
-                        graphics.DrawString(posrednie, new Font("Arial", 40), Brushes.Black, posr, format);
+                        graphics.DrawString(posrednie, new Font("Arial", 40), new SolidBrush(VIAs), posr, format);
 
                     }
                     else
                     {
-                        graphics.DrawString(posrednie, new Font("Arial", 35), Brushes.Black, posr, format);
+                        graphics.DrawString(posrednie, new Font("Arial", 35), new SolidBrush(VIAs), posr, format);
                     }
 
 
@@ -404,6 +419,48 @@ namespace Generator_pociągów
         {
             posrList.Items.Clear();
             Globals.posrednie = new List<string>();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            separatorLine = colorDialog1.Color;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            startStation = colorDialog1.Color;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            finishStation = colorDialog1.Color;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            trainName = colorDialog1.Color;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            VIAs = colorDialog1.Color;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            trainNumber = colorDialog1.Color;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            background = colorDialog1.Color;
         }
     }
 
