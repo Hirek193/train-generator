@@ -399,7 +399,5 @@ FodyWeavers.xsd
 
 *.exe
 *.pdb
-*.zip
-*.pdb
-Generator pociągów/bin/
 Generator pociągów/obj/
+Generator pociągów/bin/
