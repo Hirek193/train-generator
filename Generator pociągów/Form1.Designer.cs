@@ -140,6 +140,7 @@ namespace Generator_pociągów
             // button20
             // 
             this.button20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button20.Enabled = false;
             this.button20.Location = new System.Drawing.Point(97, 228);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(154, 23);
