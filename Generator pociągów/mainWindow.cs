@@ -202,8 +202,7 @@ namespace Generator_pociągów
                     Rectangle posr = new Rectangle(50, 285, 980, 350);
                     string posrednie = "";
                     for (int i = 0; i < Globals.posrednie.Count; i++)
-                    {
-                        posrednie += Globals.posrednie[i].name + " - ";
+                    {posrednie += Globals.posrednie[i].name + " - ";
                     }
 
                     if (posrednie.Length > 2)
