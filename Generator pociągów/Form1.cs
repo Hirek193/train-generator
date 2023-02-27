@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 namespace Generator_pociągów
 {
     public partial class mainForm : Form
@@ -79,7 +78,7 @@ namespace Generator_pociągów
             if(addPosrTxt.Text != "")
             {
                 posrList.Items.Add(addPosrTxt.Text);
-                Globals.posrednie.Add(addPosrTxt.Text);
+                Globals.posrednie.Add(new viaStation(addPosrTxt.Text, false));
                 addPosrTxt.Text = "";
                 addPosrTxt.Focus();
             }
@@ -194,17 +193,18 @@ namespace Generator_pociągów
                         new SolidBrush(finishStation), rectEnd, formatB);
 
 
-                    // Stacje posrendnie
+                    // VIAs
 
                     StringFormat format = new StringFormat();
                     format.LineAlignment = StringAlignment.Center;
                     format.Alignment = StringAlignment.Center;
+                    
 
                     Rectangle posr = new Rectangle(50, 285, 980, 400);
                     string posrednie = "";
                     for (int i = 0; i < Globals.posrednie.Count; i++)
                     {
-                        posrednie += Globals.posrednie[i] + " - ";
+                        posrednie += Globals.posrednie[i].name + " - ";
                     }
 
                     if (posrednie.Length > 2)
@@ -418,7 +418,7 @@ namespace Generator_pociągów
         private void button12_Click(object sender, EventArgs e)
         {
             posrList.Items.Clear();
-            Globals.posrednie = new List<string>();
+            Globals.posrednie = new List<viaStation>();
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -461,6 +461,21 @@ namespace Generator_pociągów
         {
             colorDialog1.ShowDialog();
             background = colorDialog1.Color;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (addPosrTxt.Text != "")
+            {
+                posrList.Items.Add(addPosrTxt.Text);
+                Globals.posrednie.Add(new viaStation(addPosrTxt.Text, true));
+                addPosrTxt.Text = "";
+                addPosrTxt.Focus();
+            }
+            else
+            {
+
+            }
         }
     }
 

@@ -10,7 +10,17 @@ namespace Generator_pociągów
     {
         public static string start;
         public static string finish;
-        public static List<string> posrednie = new List<string>();
+        public static List<viaStation> posrednie = new List<viaStation>();
         public static string number, name;
+    }
+    public class viaStation
+    {
+        public string name;
+        public bool isBold;
+        public viaStation(string name, bool isBold)
+        {
+            this.name = name;
+            this.isBold = isBold;
+        }
     }
 }

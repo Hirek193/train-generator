@@ -32,6 +32,7 @@ namespace Generator_pociągów
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -74,7 +75,7 @@ namespace Generator_pociągów
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button9 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,6 +102,7 @@ namespace Generator_pociągów
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button20);
             this.tabPage1.Controls.Add(this.button19);
             this.tabPage1.Controls.Add(this.button18);
             this.tabPage1.Controls.Add(this.button17);
@@ -134,6 +136,16 @@ namespace Generator_pociągów
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Generator Tablic Relacyjnych";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(10, 286);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(241, 23);
+            this.button19.TabIndex = 25;
+            this.button19.Text = "Ustaw kolor tła";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button18
             // 
@@ -310,9 +322,9 @@ namespace Generator_pociągów
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(192, 203);
+            this.button1.Location = new System.Drawing.Point(10, 228);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 23);
+            this.button1.Size = new System.Drawing.Size(81, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = true;
@@ -325,7 +337,7 @@ namespace Generator_pociągów
             this.addPosrTxt.ForeColor = System.Drawing.SystemColors.WindowText;
             this.addPosrTxt.Location = new System.Drawing.Point(10, 205);
             this.addPosrTxt.Name = "addPosrTxt";
-            this.addPosrTxt.Size = new System.Drawing.Size(176, 20);
+            this.addPosrTxt.Size = new System.Drawing.Size(241, 20);
             this.addPosrTxt.TabIndex = 6;
             // 
             // label3
@@ -555,15 +567,16 @@ namespace Generator_pociągów
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button19
+            // button20
             // 
-            this.button19.Location = new System.Drawing.Point(10, 286);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(241, 23);
-            this.button19.TabIndex = 25;
-            this.button19.Text = "Ustaw kolor tła";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.button20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button20.Location = new System.Drawing.Point(97, 228);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(154, 23);
+            this.button20.TabIndex = 26;
+            this.button20.Text = "Dodaj jako wyróżnione";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // mainForm
             // 
@@ -640,6 +653,7 @@ namespace Generator_pociągów
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
     }
 }
 
