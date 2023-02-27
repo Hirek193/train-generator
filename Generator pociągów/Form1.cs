@@ -189,7 +189,7 @@ namespace Generator_pociągów
 
 
                     // Final station
-                    Rectangle rectEnd = new Rectangle(0 + 50, 695, 980, 150);
+                    Rectangle rectEnd = new Rectangle(0 + 50, 645, 980, 150);
                     graphics.DrawString(Globals.finish, new Font("Arial Narrow Bold", 50),
                         new SolidBrush(finishStation), rectEnd, formatB);
 
@@ -199,7 +199,7 @@ namespace Generator_pociągów
                     format.LineAlignment = StringAlignment.Center;
                     format.Alignment = StringAlignment.Center;
 
-                    Rectangle posr = new Rectangle(50, 285, 980, 400);
+                    Rectangle posr = new Rectangle(50, 285, 980, 350);
                     string posrednie = "";
                     for (int i = 0; i < Globals.posrednie.Count; i++)
                     {
