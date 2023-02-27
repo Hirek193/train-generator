@@ -70,7 +70,6 @@ namespace Generator_pociągów
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -82,7 +81,6 @@ namespace Generator_pociągów
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -528,7 +526,6 @@ namespace Generator_pociągów
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -536,15 +533,6 @@ namespace Generator_pociągów
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Generator SRJ";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(223, 26);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Kiedyś - na razie nie planuje się za to zabierać\r\nDX";
             // 
             // saveFileDialog1
             // 
@@ -598,8 +586,6 @@ namespace Generator_pociągów
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -642,7 +628,6 @@ namespace Generator_pociągów
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
