@@ -170,7 +170,7 @@ namespace Generator_pociągów
 
                     // Number
                     graphics.DrawString(Globals.number,
-                        new Font("Arial Narrow", 50), new SolidBrush(trainNumber), rect);
+                        new Font("Arial Narrow Bold", 50), new SolidBrush(trainNumber), rect);
 
 
                     // Name
@@ -178,19 +178,19 @@ namespace Generator_pociągów
                         StringFormatFlags.DirectionRightToLeft);
 
                     graphics.DrawString(Globals.name.ToUpper(),
-                        new Font("Arial Narrow", 50, FontStyle.Italic),
+                        new Font("Arial Narrow Bold Italic", 50, FontStyle.Italic),
                         new SolidBrush(trainName), rect, formatB);
 
 
                     // Start station
                     Rectangle rectStart = new Rectangle(0 + 50, 200, 1080 - 50, 150);
-                    graphics.DrawString(Globals.start, new Font("Arial Narrow", 50),
+                    graphics.DrawString(Globals.start, new Font("Arial Narrow Bold", 50),
                         new SolidBrush(startStation), rectStart);
 
 
                     // Final station
                     Rectangle rectEnd = new Rectangle(0 + 50, 695, 980, 150);
-                    graphics.DrawString(Globals.finish, new Font("Arial Narrow", 50),
+                    graphics.DrawString(Globals.finish, new Font("Arial Narrow Bold", 50),
                         new SolidBrush(finishStation), rectEnd, formatB);
 
 
