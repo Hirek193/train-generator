@@ -32,6 +32,7 @@ namespace Generator_pociągów
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@ namespace Generator_pociągów
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button9 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button20 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -136,6 +136,17 @@ namespace Generator_pociągów
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Generator Tablic Relacyjnych";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            this.button20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button20.Location = new System.Drawing.Point(97, 228);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(154, 23);
+            this.button20.TabIndex = 26;
+            this.button20.Text = "Dodaj jako wyróżnione";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button19
             // 
@@ -554,7 +565,7 @@ namespace Generator_pociągów
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(166, 17);
-            this.toolStripStatusLabel1.Text = "Train generator v1.0.2 by Hirek";
+            this.toolStripStatusLabel1.Text = "Train generator v1.1.1 by Hirek";
             // 
             // button9
             // 
@@ -566,17 +577,6 @@ namespace Generator_pociągów
             this.button9.Text = "Zgłoś błąd";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button20
-            // 
-            this.button20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button20.Location = new System.Drawing.Point(97, 228);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(154, 23);
-            this.button20.TabIndex = 26;
-            this.button20.Text = "Dodaj jako wyróżnione";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // mainForm
             // 

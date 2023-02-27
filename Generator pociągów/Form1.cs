@@ -27,12 +27,10 @@ namespace Generator_pociągów
         List<string> wWag = new List<string>();
         List<string> loco = new List<string>();
 
-        int count = 0;
         int szerZest = 0;
         List<MiniImage> zestawienie = new List<MiniImage>();
 
         Bitmap sklad;
-        Graphics grph;
 
 
         public mainForm()
@@ -48,21 +46,21 @@ namespace Generator_pociągów
             foreach (string name in names)
             {
                 string nameB = Path.GetFileName(name);
-                nameB = nameB.Substring(0, nameB.Length - 6); // potem dodac -a.gif
+                nameB = nameB.Substring(0, nameB.Length - 6);
                 
-                if (nameB.StartsWith("A"))
+                if (nameB.StartsWith("A")) // 1st or divided class cars detection
                 {
                     aWag.Add(nameB);
                 }
-                else if (nameB.StartsWith("B"))
+                else if (nameB.StartsWith("B")) // 2nd class cars detection
                 {
                     bWag.Add(nameB);
                 }
-                else if (nameB.StartsWith("W"))
+                else if (nameB.StartsWith("W")) // Dining cars detection
                 {
                     wWag.Add(nameB);
                 }
-                else
+                else // Locos detection
                 {
                     loco.Add(nameB);
                 }
@@ -98,7 +96,8 @@ namespace Generator_pociągów
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Błąd podczas usuwania elementu listy!\n" + ex.StackTrace,
+                    ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -136,7 +135,6 @@ namespace Generator_pociągów
             {
                 MessageBox.Show("Proszę wygenerowac najpierw podgląd", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         // Generator
@@ -164,13 +162,16 @@ namespace Generator_pociągów
                     };
                     graphics.FillPolygon(bg, pf);
 
+
                     // Separator
                     graphics.DrawLine(pen, new PointF(0 + 50, 150),
                         new PointF(1080 - 50, 150));
 
+
                     // Number
                     graphics.DrawString(Globals.number,
                         new Font("Arial", 50), new SolidBrush(trainNumber), rect);
+
 
                     // Name
                     StringFormat formatB = new StringFormat(
@@ -180,8 +181,8 @@ namespace Generator_pociągów
                         new Font("Arial", 50, FontStyle.Italic),
                         new SolidBrush(trainName), rect, formatB);
 
-                    // Start station
 
+                    // Start station
                     Rectangle rectStart = new Rectangle(0 + 50, 200, 1080 - 50, 150);
                     graphics.DrawString(Globals.start, new Font("Arial", 50),
                         new SolidBrush(startStation), rectStart);
@@ -194,11 +195,9 @@ namespace Generator_pociągów
 
 
                     // VIAs
-
                     StringFormat format = new StringFormat();
                     format.LineAlignment = StringAlignment.Center;
                     format.Alignment = StringAlignment.Center;
-                    
 
                     Rectangle posr = new Rectangle(50, 285, 980, 400);
                     string posrednie = "";
@@ -312,7 +311,7 @@ namespace Generator_pociągów
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.StackTrace, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -338,9 +337,7 @@ namespace Generator_pociągów
                 MessageBox.Show(pictureBox2.BackgroundImage.Height.ToString());
             }
             szerZest += pictureBox2.BackgroundImage.Width;
-
             pictureBox3.Image = sklad;
-
             hScrollBar1.Maximum = szerZest + 7;
         }
 
