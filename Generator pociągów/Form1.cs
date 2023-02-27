@@ -170,7 +170,7 @@ namespace Generator_pociągów
 
                     // Number
                     graphics.DrawString(Globals.number,
-                        new Font("Arial", 50), new SolidBrush(trainNumber), rect);
+                        new Font("Arial Narrow", 50), new SolidBrush(trainNumber), rect);
 
 
                     // Name
@@ -178,19 +178,19 @@ namespace Generator_pociągów
                         StringFormatFlags.DirectionRightToLeft);
 
                     graphics.DrawString(Globals.name.ToUpper(),
-                        new Font("Arial", 50, FontStyle.Italic),
+                        new Font("Arial Narrow", 50, FontStyle.Italic),
                         new SolidBrush(trainName), rect, formatB);
 
 
                     // Start station
                     Rectangle rectStart = new Rectangle(0 + 50, 200, 1080 - 50, 150);
-                    graphics.DrawString(Globals.start, new Font("Arial", 50),
+                    graphics.DrawString(Globals.start, new Font("Arial Narrow", 50),
                         new SolidBrush(startStation), rectStart);
 
 
                     // Final station
                     Rectangle rectEnd = new Rectangle(0 + 50, 695, 980, 150);
-                    graphics.DrawString(Globals.finish, new Font("Arial", 50),
+                    graphics.DrawString(Globals.finish, new Font("Arial Narrow", 50),
                         new SolidBrush(finishStation), rectEnd, formatB);
 
 
@@ -213,16 +213,16 @@ namespace Generator_pociągów
 
                     if (posrednie.Length > 180)
                     {
-                        graphics.DrawString(posrednie, new Font("Arial", 30), new SolidBrush(VIAs), posr, format);
+                        graphics.DrawString(posrednie, new Font("Arial Narrow", 30), new SolidBrush(VIAs), posr, format);
                     }
                     else if (posrednie.Length < 100)
                     {
-                        graphics.DrawString(posrednie, new Font("Arial", 40), new SolidBrush(VIAs), posr, format);
+                        graphics.DrawString(posrednie, new Font("Arial Narrow", 40), new SolidBrush(VIAs), posr, format);
 
                     }
                     else
                     {
-                        graphics.DrawString(posrednie, new Font("Arial", 35), new SolidBrush(VIAs), posr, format);
+                        graphics.DrawString(posrednie, new Font("Arial Narrow", 35), new SolidBrush(VIAs), posr, format);
                     }
 
 
